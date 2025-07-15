@@ -6,7 +6,8 @@ import { useUser } from '@clerk/nextjs';
 // import { currentUser } from '@clerk/nextjs/server'
 import { equal } from 'node:assert';
 import React, { useContext, useEffect, useState } from 'react'
-import { HISTORY } from '../history/page';
+import HISTORY from '../history/page';
+
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
 
 function UsageTrack() {
