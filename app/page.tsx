@@ -1,103 +1,87 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
+import { Sparkles, PenTool, CreditCard, Headphones } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black/90 relative overflow-hidden">
+      {/* Logo top left */}
+      <div className="absolute top-6 left-8 z-20 flex items-center gap-3">
+        <Image src="/logo.svg" alt="AutoMuse Logo" width={48} height={48} className="drop-shadow-lg" />
+        <span className="text-2xl font-bold text-white hidden md:inline">AutoMuse</span>
+      </div>
+      {/* Animated floating shapes */}
+      <div className="pointer-events-none select-none absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-10 w-40 h-40 bg-violet-800 opacity-30 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-10 right-20 w-32 h-32 bg-violet-500 opacity-20 rounded-full blur-2xl animate-float-medium" />
+        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-violet-700 opacity-20 rounded-full blur-2xl animate-float-fast" />
+      </div>
+      {/* Hero Section */}
+      <div className="text-center mb-16 z-10">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">
+          AutoMuse
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          AI-powered content creation platform for creators, marketers, and businesses.
+        </p>
+        <Link href="/dashboard">
+          <Button className="px-8 py-4 text-lg font-semibold rounded-full bg-violet-700 hover:bg-violet-600 transition-colors shadow-lg">
+            Get Started
+          </Button>
+        </Link>
+      </div>
+      {/* Feature Cards with motion */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl z-10">
+        {/* Card 1 */}
+        <div className="bg-black/80 border border-violet-700 rounded-2xl p-8 flex flex-col items-center shadow-xl backdrop-blur-md transform transition-transform duration-500 hover:-translate-y-2 hover:scale-105 animate-fade-in">
+          <Sparkles className="w-10 h-10 text-violet-400 mb-4 animate-bounce-slow" />
+          <h3 className="text-xl font-bold text-white mb-4">15+ Templates</h3>
+          <p className="text-gray-300 mb-4 text-center">Choose from a wide variety of content templates for blogs, ads, emails, and more.</p>
+          <Link href="/dashboard">
+            <Button variant="outline" className="border-violet-700 text-violet-300 hover:bg-violet-800 hover:text-white transition-colors w-full">
+              Learn More
+            </Button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* Card 2 */}
+        <div className="bg-black/80 border border-violet-700 rounded-2xl p-8 flex flex-col items-center shadow-xl backdrop-blur-md transform transition-transform duration-500 hover:-translate-y-2 hover:scale-105 animate-fade-in delay-100">
+          <PenTool className="w-10 h-10 text-violet-400 mb-4 animate-bounce-slow" />
+          <h3 className="text-xl font-bold text-white mb-4">Content Creation</h3>
+          <p className="text-gray-300 mb-4 text-center">Generate high-quality, original content in seconds with AI assistance.</p>
+          <Link href="/dashboard">
+            <Button variant="outline" className="border-violet-700 text-violet-300 hover:bg-violet-800 hover:text-white transition-colors w-full">
+              Learn More
+            </Button>
+          </Link>
+        </div>
+        {/* Card 3 */}
+        <div className="bg-black/80 border border-violet-700 rounded-2xl p-8 flex flex-col items-center shadow-xl backdrop-blur-md transform transition-transform duration-500 hover:-translate-y-2 hover:scale-105 animate-fade-in delay-200">
+          <CreditCard className="w-10 h-10 text-violet-400 mb-4 animate-bounce-slow" />
+          <h3 className="text-xl font-bold text-white mb-4">Subscriptions</h3>
+          <p className="text-gray-300 mb-4 text-center">Flexible plans for individuals and teams. Upgrade anytime to unlock more features.</p>
+          <Link href="/dashboard">
+            <Button variant="outline" className="border-violet-700 text-violet-300 hover:bg-violet-800 hover:text-white transition-colors w-full">
+              Learn More
+            </Button>
+          </Link>
+        </div>
+        {/* Card 4 */}
+        <div className="bg-black/80 border border-violet-700 rounded-2xl p-8 flex flex-col items-center shadow-xl backdrop-blur-md transform transition-transform duration-500 hover:-translate-y-2 hover:scale-105 animate-fade-in delay-300">
+          <Headphones className="w-10 h-10 text-violet-400 mb-4 animate-bounce-slow" />
+          <h3 className="text-xl font-bold text-white mb-4">24/7 Support</h3>
+          <p className="text-gray-300 mb-4 text-center">Our team is always here to help you, any time, any day.</p>
+          <Link href="/dashboard">
+            <Button variant="outline" className="border-violet-700 text-violet-300 hover:bg-violet-800 hover:text-white transition-colors w-full">
+              Learn More
+            </Button>
+          </Link>
+        </div>
+      </div>
+      {/* Subtle animated gradient background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute left-1/2 top-1/2 w-[120vw] h-[120vw] -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-violet-900/40 via-black/80 to-black opacity-60 animate-gradient-move" />
+      </div>
     </div>
   );
 }
