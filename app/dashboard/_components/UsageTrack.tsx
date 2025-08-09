@@ -57,9 +57,10 @@ function UsageTrack() {
         <h2 className="font-medium text-white">Credits</h2>
         <div className="h-2 bg-[#9981f9] w-full rounded-full mt-3">
           <div
-            className="h-2 bg-white rounded-full"
-            style={{ width: `${(totalUsage / 10000) * 100}%` }}
-          ></div>
+  className="h-2 bg-white rounded-full transition-all duration-300 ease-in-out"
+  style={{ width: `${Math.min((totalUsage / 10000) * 100, 100)}%` }}
+>       </div>
+
         </div>
         <h2 className="text-sm my-2 text-white">{totalUsage}/10,000 Credit Used</h2>
       </div>
