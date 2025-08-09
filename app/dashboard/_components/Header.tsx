@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Search } from 'lucide-react'
 import React from 'react'
 
@@ -9,7 +10,7 @@ function Header() {
             <input type='text' placeholder='Search' className='outline-none'/>
         </div>
         <div>
-            <h2 className='bg-violet-600 p-2 rounded-full text-xs cursor-pointer text-white px-2'>Join Membership just for 100 Rs.</h2>
+            <Button className='bg-violet-600 p-2 rounded-full text-xs cursor-pointer text-white px-2'>Join Membership at just 199/-</Button>
         </div>
     </div>
   )
