@@ -11,7 +11,7 @@ const generationConfig = {
   responseMimeType: 'text/plain',
 };
 
-const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
+const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 export const createChatSession = async () => {
   const chatSession = await model.startChat({
